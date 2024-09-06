@@ -62,7 +62,6 @@ namespace PalindromeNumberFiltering
         /// <returns>True if the positive number is a palindrome, otherwise false.</returns>
         private static bool IsPositiveNumberPalindrome(int number, int divider)
         {
-            var length = GetLength(number);
             if (number < 10)
             {
                 return true;
@@ -70,6 +69,7 @@ namespace PalindromeNumberFiltering
 
             int left = number / divider;
             int right = number % 10;
+#pragma warning disable IDE0047
             var nextNumber = (number % divider) / 10;
             if (left == right)
             {
